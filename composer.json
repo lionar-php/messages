@@ -1,0 +1,26 @@
+{
+	"name": "lionar/messages",
+	"description": "the base rules for lionar messages",
+	"keywords": [ "lionar", "messages" ],
+	"license": "MIT",
+	"require" : {
+		"php": ">=5.5.9"
+  	},
+	"require-dev": {
+		"lionar/testing": "*"
+	},
+	"autoload": {
+	    	"psr-4": {
+			"Lionar\\Messages\\": "source"
+	    	}
+  	},
+	"autoload-dev": {
+        		"psr-4": {
+			"Lionar\\Messages\\Tests\\": "tests"
+		}
+    	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "dev"
+}
