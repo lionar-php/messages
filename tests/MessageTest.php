@@ -1,16 +1,16 @@
 <?php
 
-namespace Lionar\Messages\Tests;
+namespace Messages\Tests;
 
-use 	Lionar\Messages\Message,
-	Lionar\Testing\TestCase,
-	Mockery;
+use Messages\Message;
+use	Mockery;
+use	Testing\TestCase;
 
 class MessageTest extends TestCase
 {
 	public function setUp ( )
 	{
-		$this->paragraph = Mockery::mock ( 'Lionar\\Messages\\Paragraph' );
+		$this->paragraph = Mockery::mock ( 'Messages\\Paragraph' );
 	}
 
 	/**

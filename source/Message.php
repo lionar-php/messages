@@ -1,6 +1,6 @@
 <?php
 
-namespace Lionar\Messages;
+namespace Messages;
 
 class Message
 {

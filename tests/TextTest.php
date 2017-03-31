@@ -1,10 +1,10 @@
 <?php
 
-namespace Lionar\Messages\Tests;
+namespace Messages\Tests;
 
-use 	Lionar\Messages\Text,
-	Lionar\Testing\TestCase,
-	Mockery;
+use Messages\Text;
+use	Mockery;
+use	Testing\TestCase;
 
 class TextTest extends TestCase
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Lionar\Messages\Tests;
+namespace Messages\Tests;
 
-use 	Lionar\Messages\Title,
-	Lionar\Testing\TestCase,
-	Mockery;
+use Messages\Title;
+use	Mockery;
+use	Testing\TestCase;
 
 class TitleTest extends TestCase
 {
@@ -13,7 +13,7 @@ class TitleTest extends TestCase
 	public function setUp ( )
 	{
 		$this->title = new Title;
-		$this->text = Mockery::mock ( 'Lionar\\Messages\\Text' );
+		$this->text = Mockery::mock ( 'Messages\\Text' );
 	}
 
 	/**

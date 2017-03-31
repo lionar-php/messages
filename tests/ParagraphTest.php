@@ -1,10 +1,10 @@
 <?php
 
-namespace Lionar\Messages\Tests;
+namespace Messages\Tests;
 
-use 	Lionar\Messages\Paragraph,
-	Lionar\Testing\TestCase,
-	Mockery;
+use Messages\Paragraph;
+use	Mockery;
+use	Testing\TestCase;
 
 class ParagraphTest extends TestCase
 {
@@ -13,7 +13,7 @@ class ParagraphTest extends TestCase
 	public function setUp ( )
 	{
 		$this->paragraph = new Paragraph;
-		$this->text = Mockery::mock ( 'Lionar\\Messages\\Text' );
+		$this->text = Mockery::mock ( 'Messages\\Text' );
 	}
 
 	/**
