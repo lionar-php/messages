@@ -4,6 +4,7 @@
 	"keywords": [ "Lionar", "Messages" ],
 	"license": "MIT",
 	"require" : {
+		"lionar/support": "*",
 		"php": ">=5.5.9"
   	},
 	"require-dev": {

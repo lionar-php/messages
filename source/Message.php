@@ -2,25 +2,17 @@
 
 namespace Messages;
 
+use Accessibility\Readable;
+
 class Message
 {
-	protected $body = null;
+	use Readable;
 
-	public function __construct ( Paragraph $body )
+	private $title, $body = null;
+
+	public function __construct ( Title $title, Body $body )
 	{
+		$this->title = $title;
 		$this->body = $body;
-	}
-
-	public function __get ( $property )
-	{
-		if ( isset ( $this->{ $property } ) )
-			return $this->{ $property };
-	}
-
-	public function __toString ( )
-	{
-		if ( isset ( $this->body ) )
-			return ( string ) $this->body;
-		return '';
 	}
 }

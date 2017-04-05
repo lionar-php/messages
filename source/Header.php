@@ -2,7 +2,7 @@
 
 namespace Messages;
 
-class Paragraph extends Text
+class Header extends Text
 {
 
 }

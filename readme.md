@@ -1,8 +1,6 @@
 # Lionar messages
 
-Lionar messages provides a secure layer to create valid messages. Some validation rules are
-automatically applied when you make use of this package. For example a paragraph can only
-consist of a maximum of 140 characters. 
+Lionar messages provides a secure layer to create valid messages. The following validation rules are automatically applied when using this package.
 
 ## Validation rules
 
@@ -13,18 +11,18 @@ consist of a maximum of 140 characters.
 ## Usage
 
 ```php
-use 	Lionar\Messages\Message,
-	Lionar\Messages\Paragraph,
-	Lionar\Messages\Text;
+use Messages\Message;
+use Messages\Paragraph;
+use	Messages\Text;
 
 require __DIR__ . '/vendor/autoload.php';
 
 $text = new Text;
 $paragraph = new Paragraph;
 
-$paragraph->with( $text( 'after a development period of 2 years eyesign is finally finished, have a look at it at http://eyesign.nl' ) );
+$paragraph->with( $text( 'Our new site is online, go take a look: http://eyedouble.nl' ) );
 
 $message = new Message( $paragraph );
 
-echo $message->body;
+echo $message->body; // 'Our new site is online, go take a look: http://eyedouble.nl'
 ```

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="vendor/autoload.php"
+		beStrictAboutTestsThatDoNotTestAnything="false"
          backupGlobals="false"
          backupStaticAttributes="false"
          colors="true"
@@ -10,13 +11,13 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Eyedouble messages test suite">
+        <testsuite name="Messages test suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist>
-            <directory suffix=".php">source/</directory>
+            <directory suffix=".php">source</directory>
         </whitelist>
     </filter>
 </phpunit>

@@ -4,8 +4,57 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5933bd2e47e33b1921039b6d564609f7",
-    "packages": [],
+    "content-hash": "3bf93445a0a0c69576e97472110d110b",
+    "packages": [
+        {
+            "name": "lionar/support",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lionar/support.git",
+                "reference": "bb48136459ba314e06d0e03de4133b685e2cd94a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lionar/support/zipball/bb48136459ba314e06d0e03de4133b685e2cd94a",
+                "reference": "bb48136459ba314e06d0e03de4133b685e2cd94a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "lionar/testing": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Accessibility\\": "source/Accessibility",
+                    "Arrays\\": "source/Arrays"
+                },
+                "files": [
+                    "helpers/arrays.php",
+                    "helpers/classes.php",
+                    "helpers/serialization.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aron Wouters",
+                    "email": "lionar@mail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Supporting tools and functions.",
+            "keywords": [
+                "component",
+                "lionar",
+                "support"
+            ],
+            "time": "2016-10-18T13:46:44+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -685,12 +734,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "7b69b0c75afe601047bae69e9065ef154ffce111"
+                "reference": "486dd6377ac5e06760c0d9e218fe763cf72ccd3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/7b69b0c75afe601047bae69e9065ef154ffce111",
-                "reference": "7b69b0c75afe601047bae69e9065ef154ffce111",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/486dd6377ac5e06760c0d9e218fe763cf72ccd3f",
+                "reference": "486dd6377ac5e06760c0d9e218fe763cf72ccd3f",
                 "shasum": ""
             },
             "require": {
@@ -714,7 +763,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.0.x-dev"
+                    "dev-master": "5.1.x-dev"
                 }
             },
             "autoload": {
@@ -740,7 +789,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-31T13:21:26+00:00"
+            "time": "2017-04-03T03:39:44+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -934,12 +983,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "bf00f6f0dd1c379c082dd4fab27de475dbcb7bff"
+                "reference": "e0d6696b818ed0e58784e4af62b8d9ec94c5a7dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bf00f6f0dd1c379c082dd4fab27de475dbcb7bff",
-                "reference": "bf00f6f0dd1c379c082dd4fab27de475dbcb7bff",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e0d6696b818ed0e58784e4af62b8d9ec94c5a7dc",
+                "reference": "e0d6696b818ed0e58784e4af62b8d9ec94c5a7dc",
                 "shasum": ""
             },
             "require": {
@@ -950,6 +999,7 @@
                 "ext-xml": "*",
                 "myclabs/deep-copy": "^1.3",
                 "phar-io/manifest": "^1.0.1",
+                "phar-io/version": "^1.0",
                 "php": "^7.0",
                 "phpspec/prophecy": "^1.7",
                 "phpunit/php-code-coverage": "^5.0",
@@ -960,7 +1010,7 @@
                 "sebastian/comparator": "^2.0",
                 "sebastian/diff": "^1.2",
                 "sebastian/environment": "^2.0",
-                "sebastian/exporter": "^3.0",
+                "sebastian/exporter": "^3.1",
                 "sebastian/global-state": "^1.1 || ^2.0",
                 "sebastian/object-enumerator": "^3.0.2",
                 "sebastian/resource-operations": "^1.0",
@@ -1009,7 +1059,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-31T17:18:07+00:00"
+            "time": "2017-04-04T06:14:47+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1017,12 +1067,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "94694b31c0099e9ce01443857ae0e3c65b1c1825"
+                "reference": "5cbf2424850cc702617646fca5a2ae2c77bf6f6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/94694b31c0099e9ce01443857ae0e3c65b1c1825",
-                "reference": "94694b31c0099e9ce01443857ae0e3c65b1c1825",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/5cbf2424850cc702617646fca5a2ae2c77bf6f6e",
+                "reference": "5cbf2424850cc702617646fca5a2ae2c77bf6f6e",
                 "shasum": ""
             },
             "require": {
@@ -1068,7 +1118,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2017-03-07T08:51:01+00:00"
+            "time": "2017-04-01T10:07:28+00:00"
         },
         {
             "name": "psr/log",
@@ -1334,12 +1384,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "aaaaa5afbde60821d6c83477011fdb6c575e5243"
+                "reference": "234199f4528de6d12aaa58b612e98f7d36adb937"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/aaaaa5afbde60821d6c83477011fdb6c575e5243",
-                "reference": "aaaaa5afbde60821d6c83477011fdb6c575e5243",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/234199f4528de6d12aaa58b612e98f7d36adb937",
+                "reference": "234199f4528de6d12aaa58b612e98f7d36adb937",
                 "shasum": ""
             },
             "require": {
@@ -1353,7 +1403,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "3.1.x-dev"
                 }
             },
             "autoload": {
@@ -1393,7 +1443,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2017-03-07T07:32:56+00:00"
+            "time": "2017-04-03T13:19:02+00:00"
         },
         {
             "name": "sebastian/global-state",

@@ -2,45 +2,36 @@
 
 namespace Messages\Tests;
 
+use Messages\Body;
 use Messages\Message;
-use	Mockery;
-use	Testing\TestCase;
+use Messages\Title;
+use Mockery;
+use Testing\TestCase;
 
 class MessageTest extends TestCase
 {
 	public function setUp ( )
 	{
-		$this->paragraph = Mockery::mock ( 'Messages\\Paragraph' );
+		$this->title = Mockery::mock ( Title::class );
+		$this->body = Mockery::mock ( Body::class );
 	}
 
 	/**
 	 * @test
-	 * @dataProvider bodyTexts
-     */
-	public function __get_withBodyProperty_returnsSetBody ( $body )
+	 */
+	public function __construct_withTitle_setsTitleOnMessage ( )
 	{
-		$this->paragraph->shouldReceive( '__toString' )->once ( )->andReturn ( $body );
-		$message = new Message ( $this->paragraph );
-		$this->assertEquals ( $body , ( string ) $message->body );
+		$message = new Message ( $this->title, $this->body );
+		assertThat ( $message->title, is ( identicalTo ( $this->title ) ) );
 	}
 
 	/**
 	 * @test
-	 * @dataProvider bodyTexts
-     	 */
-	public function __toString_withBodyProperty_returnsSetBody ( $body )
+	 */
+	public function __construct_withBody_setsBodyOnMessage ( )
 	{
-		$this->paragraph->shouldReceive ( '__toString' )->once ( )->andReturn ( $body );
-		$message = new Message ( $this->paragraph );
-		$this->assertEquals ( $body , ( string ) $message );
+		$message = new Message ( $this->title, $this->body );
+		assertThat ( $message->body, is ( identicalTo ( $this->body ) ) );
 	}
-
-	public function bodyTexts ( )
-	{
-		return array (
-
-			array ( 'my body text' ),
-			array ( 'after years of development' )
-		);
-	}
+	
 }

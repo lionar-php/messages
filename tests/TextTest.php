@@ -3,56 +3,47 @@
 namespace Messages\Tests;
 
 use Messages\Text;
-use	Mockery;
-use	Testing\TestCase;
+use Mockery;
+use Testing\TestCase;
 
 class TextTest extends TestCase
 {
-	private $text = null;
-
-	public function setUp ( )
+	/**
+	 * @test
+	 * @expectedException InvalidArgumentException
+	 */
+	public function __construct_withEmptyString_throwsException ( )
 	{
-		$this->text = new Text;
+		$text = Mockery::mock ( Text::class, [ '' ] );
+	}
+
+	/**
+	 * @test
+	 */
+	public function __construct_withTextNoMoreThan140Characters_setsTextOnParagraph ( )
+	{
+		$text = 'Finally our website is finished. Checkout our awesome website at: http://eyedouble.nl';
+		$textObject = Mockery::mock ( Text::class, [ $text ] );
+		assertThat ( $textObject->text, is ( identicalTo ( $text ) ) );
 	}
 
 	/**
 	 * @test
 	 * @expectedException InvalidArgumentException
 	 */
-	public function __construct_withEmptyString_throwsInvalidArgumentException ( )
+	public function __construct_withTextMoreThan140Characters_throwsException ( )
 	{
-		$this->text->__invoke ( '' );
+		$text = 'Finally our website is finished. Checkout our awesome website at: http://eyedouble.nl. It is the most awesome website ever build. By the way this paragraph has way to many characters for anybody to even care about.';
+		$text = Mockery::mock ( Text::class, [ $text ] );
 	}
 
 	/**
 	 * @test
-	 * @expectedException InvalidArgumentException
-	 * @dataProvider nonStringValues
 	 */
-	public function __construct_withNonStringValue_throwsInvalidArgumentException ( $value )
+	public function __construct_withWrongPunctuatedText_autoCorrectsPunctuation ( )
 	{
-		$this->text->__invoke ( $value );
-	}
-
-	/**
-	 * @test
-     	 */
-	public function __construct_withStringThatContainsAtLeastOneCharacter_setsTheText ( )
-	{
-		$validText = 'Eyesign beta release';
-		$this->text->__invoke ( $validText );
-		$this->assertEquals ( $validText, ( string ) $this->text );
-	}
-
-	/**
-	 * @test
-     	 */
-	public function __construct_withStringThatContainsHTMLtags_escapesTheTagsAndSetsTheOutcomeOfThatEscapingAsText( )
-	{
-		$htmlTaggedText = '<h1>hello world</h1>';
-		$htmlEscapedText = '&lt;h1&gt;hello world&lt;/h1&gt;';
-
-		$this->text->__invoke ( $htmlTaggedText );
-		$this->assertEquals ( $htmlEscapedText, ( string ) $this->text );
+		$text = 'finally our website is finished. checkout our awesome website at: http://eyedouble.nl. don\'t you think it\'s awesome? i think it is! do you?';
+		$text = Mockery::mock ( Text::class, [ $text ] );
+		assertThat ( $text->text, is ( identicalTo ( 'Finally our website is finished. Checkout our awesome website at: http://eyedouble.nl. Don\'t you think it\'s awesome? I think it is! Do you?' ) ) );
 	}
 }
